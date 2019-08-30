@@ -1,0 +1,26 @@
+{
+    "name": "tpp",
+    "displayName": "tpp",
+    "description": "T++",
+    "version": "0.0.1",
+    "publisher": "vitorCamargo",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "tpp",
+            "aliases": ["T++", "tpp"],
+            "extensions": [".tpp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "tpp",
+            "scopeName": "main.tpp",
+            "path": "./syntaxes/tpp.tmLanguage.json"
+        }]
+    }
+}

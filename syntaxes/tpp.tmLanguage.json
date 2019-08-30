@@ -1,0 +1,84 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "T++",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#function"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.tpp",
+				"match": "\\b(se|senão|então|repita|até|retorna|fim)\\b"
+			}, {
+				"name": "support.type.property-name.tpp",
+				"match": "\\b(inteiro|flutuante|leia|escreva)\\b"
+			}, {
+				"name": "constant.character.tpp",
+				"match": "\\b((\\d+(\\.\\d*)?[eE][-+]?\\d+)|(\\d+\\.\\d*)|\\d+)\\b"
+			}, {
+				"name": "keyword.operator.tpp",
+				"match": "&&|\\|\\||:=|=|:|>|<|>=|<=|<>|\\+|\\-|\\*|\\/"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.tpp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tpp",
+					"match": "\\\\."
+				}
+			]
+		},
+		"string": {
+			"name": "string.quoted.double.tpp",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tpp",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.block",
+			"begin": "{",
+			"end": "}",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tpp",
+					"match": "\\\\."
+				}
+			]
+		},
+		"function": {
+			"patterns": [{
+				"name": "entity.name.function.tpp",
+				"match": "\\b(principal)\\b"
+			}, {
+				"name": "entity.name.function.tpp",
+				"match": "[a-zA-Z_áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ][a-zA-Z_0-9áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]*(?=\\(.*\\))"
+			}, {
+				"name": "variable.parameter.tpp",
+				"match": "(?<=\\()[^\n]+(?=\\))"
+			}]
+		}
+	},
+	"scopeName": "main.tpp"
+}
